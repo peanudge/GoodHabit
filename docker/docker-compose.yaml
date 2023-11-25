@@ -1,0 +1,24 @@
+version: "3.4"
+services:
+  sql_server:
+    container_name: sql_server
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    platform: linux/amd64
+    ports:
+      - "9876:1433"
+    volumes:
+      - habit-db-volume:/var/lib/mssqlql/data
+    env_file:
+      - sqlserver/sqlserver.env
+  dev-env:
+    container_name: dev-env
+    ports:
+      - "5100:5100"
+    build:
+      context: ./dev-env
+    volumes:
+      - "..:/workspace"
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+volumes:
+  habit-db-volume: null

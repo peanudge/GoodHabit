@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "RunClient",
+            "type": "blazorwasm",
+            "request": "launch",
+            "preLaunchTask": "build-client",
+            "cwd": "${workspaceFolder}/GoodHabits.Client",
+        },
+        {
+            "name": "RunHabitService",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask":  "build-habit-service",
+            "program": "${workspaceFolder}/GoodHabits.HabitService/bin/Debug/net7.0/GoodHabits.HabitService.dll",
+            "args": ["--urls","http://+:5100"],
+            "cwd": "${workspaceFolder}/GoodHabits.HabitService",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+    ],
+    "compounds": [
+        {
+            "name": "Run All",
+            "configurations": [
+                "RunClient",
+                "RunHabitService"
+            ]
+        }
+    ]
+}

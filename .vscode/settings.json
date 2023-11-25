@@ -1,0 +1,7 @@
+{
+    "thunder-client.saveToWorkspace": true,
+    "thunder-client.workspaceRelativePath": ".thunder-client",
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+}
