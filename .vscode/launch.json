@@ -18,9 +18,7 @@
             "cwd": "${workspaceFolder}/GoodHabits.HabitService",
             "stopAtEntry": false,
             "console": "integratedTerminal",
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
+            
         },
     ],
     "compounds": [
